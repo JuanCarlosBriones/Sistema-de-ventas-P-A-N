@@ -1,0 +1,15 @@
+{
+  "name": "backend-p-a-n",
+  "version": "1.0.0",
+  "description": "backend for P-A-N System",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JuanCarlosBriones",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
