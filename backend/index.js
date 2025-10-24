@@ -1,12 +1,18 @@
 import express from 'express'
+import cors from 'cors'
 
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
-    res.send('Hola mundo')
+app.use(cors())
+app.use(express.json())
+
+app.post('/api/nombre',(req, res) => {
+    const { nombre } = req.body;
+    console.log("Nombre recibido: ", nombre)
+    res.json({ nombre })
 })
 
-app.listen(port, () => {
-    console.log(`Ejemplo de aplicación escuchando en puerto ${port}`)
+app.listen(port, () =>{
+    console.log(`Servidor corriendo en http://localhost:${port}`)
 })
