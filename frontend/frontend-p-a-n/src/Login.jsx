@@ -12,6 +12,7 @@ import { motion } from "framer-motion"
 import Carta from "./Carta"
 
 
+
 function ButtonLogin({setNombreRecibido}){
     
     const [nombre, setNombre] = useState("")
@@ -39,7 +40,7 @@ function ButtonLogin({setNombreRecibido}){
 
     return(
         <>
-        <Button onClick={handleOpen}>
+        <Button onClick={handleOpen} size="lg" fullWidth>
             Ingresar
         </Button>
         <Dialog 
@@ -81,7 +82,7 @@ function ButtonLogin({setNombreRecibido}){
                             whileTap={{scale:0.95}}
                             transition={{type:"spring", stiffness:300}}
                         >
-                            <Button variant="gradient" onClick={handleOpen} fullWidth type="submit">
+                            <Button variant="gradient" onClick={handleOpen} fullWidth type="submit" size="lg">
                                 Ingresar
                             </Button>
                         </motion.div>
@@ -106,20 +107,40 @@ function ButtonLoginAnimated({setNombreRecibido}){
         </>
     )
 }
+function NewView(){
+    return(
+        <Button>Nueva Vista</Button>
+    )
+}
+
+function WelcomeImage(){
+    return(
+        <>
+            <img
+              className="w-full h-screen object-cover"
+              src="../src/assets/WelcomeImages/WelcomeImageWhitBread.jpg"
+              alt="Welcome image with bread"
+            />
+        </>
+    )
+}
 
 function Login(){
     const [nombreRecibido, setNombreRecibido] = useState("")
     return(
         <>
-                <div className="flex flex-col items-center">
-                    <Typography variant="h1">
-                    Bienvenid@ al sistema P.A.N
-                    </Typography>
-                <div className="mt-2">
-                    <Typography variant="h6">
-                    Dónde se hornean los mejores negocios
-                    </Typography>
-                </div>
+
+            <WelcomeImage />
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 bg-orange-800 bg-opacity-50">
+                
+                <Typography variant="h1" className="text-6xl font-bold text-center drop-shadow-2xl font-playfair">
+                Bienvenid@ al sistema P.A.N
+                </Typography>
+                
+                <Typography variant="h6" className="mt-2 text-3xl text-center  font-playfair">
+                Dónde se hornean los mejores negocios
+                </Typography>
+                
                 <div className="mt-16">
                     <ButtonLoginAnimated setNombreRecibido={setNombreRecibido} />
                 </div>

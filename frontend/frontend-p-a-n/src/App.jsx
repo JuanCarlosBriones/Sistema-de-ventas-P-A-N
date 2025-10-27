@@ -1,12 +1,18 @@
-
+import HomeCheckOut from './Home';
 import Login from './Login';
+
+
+import { Route, Switch} from 'wouter';
  
 function App() {
 
   return (
-     <>     
-      <div className='flex flex-col justify-center items-center min-h-screen'>
-       <Login />
+     <>          
+      <div>
+        <Switch>
+          <Route path="/" component={Login} />
+          <Route path="/home" component={HomeCheckOut}/>
+        </Switch>
       </div>
     </>
   )
