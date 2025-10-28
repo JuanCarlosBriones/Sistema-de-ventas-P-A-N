@@ -10,7 +10,12 @@
   "author": "JuanCarlosBriones",
   "license": "ISC",
   "dependencies": {
+    "@prisma/adapter-mariadb": "^6.18.0",
+    "@prisma/client": "^6.18.0",
     "cors": "^2.8.5",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "prisma": "^6.18.0"
   }
 }
