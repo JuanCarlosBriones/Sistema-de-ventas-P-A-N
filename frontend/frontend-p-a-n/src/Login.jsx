@@ -11,24 +11,29 @@ import {
 import { motion } from "framer-motion"
 import Carta from "./Carta"
 
-
-
-function ButtonLogin({setNombreRecibido}){
+function ButtonLogin({setNombreRecibido }){
     
     const [nombre, setNombre] = useState("")
+    const [password, setPassword] = useState("")
     
     
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const res = await fetch("http://localhost:3000/api/nombre", {
+            const res = await fetch("http://localhost:3000/api/login", {
                 method: "POST",
                 headers: {"Content-Type":"application/json"},
-                body: JSON.stringify({ nombre }),
+                body: JSON.stringify({ nombre, password }),
             })
             const data = await res.json()
-            setNombreRecibido(data.nombre)
+            if (res.ok) {
+                setNombreRecibido(data.user.user_name)
+                console.log("Login Exitoso: ", data)
+            }else{
+                console.error("Error en el login: ", data.error)
+            }
+            
         } catch (error) {
             console.error("Error en el envío del nombre: ", error)
         }
@@ -74,7 +79,13 @@ function ButtonLogin({setNombreRecibido}){
                         <Typography className="-mb-2" variant="h6">
                           Contraseña
                         </Typography>
-                        <Input label="Contraseña" size="lg" type="password" />
+                        <Input 
+                        label="Contraseña"
+                        size="lg"
+                        type="password" 
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        />
                     </CardBody>
                     <CardFooter className="pt-0">
                         <motion.div
@@ -105,11 +116,6 @@ function ButtonLoginAnimated({setNombreRecibido}){
                 <ButtonLogin setNombreRecibido={setNombreRecibido} />
             </motion.div>
         </>
-    )
-}
-function NewView(){
-    return(
-        <Button>Nueva Vista</Button>
     )
 }
 
