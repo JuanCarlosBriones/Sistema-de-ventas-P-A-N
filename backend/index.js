@@ -2,7 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import inicioRouter from './routes/inicioRouter.js'
-import { createUser } from './controller/inicioSesión/inicioSesionController.js'
+
+
 
 dotenv.config({ path: '.env' })
 

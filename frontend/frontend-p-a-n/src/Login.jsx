@@ -10,38 +10,37 @@ import {
 } from "@material-tailwind/react"
 import { motion } from "framer-motion"
 import Carta from "./Carta"
+import { useLocation } from "wouter"
+import useLogin from "./hook/useLogin.js"
+
 
 function ButtonLogin({setNombreRecibido }){
     
     const [nombre, setNombre] = useState("")
     const [password, setPassword] = useState("")
-    
+    const [, setLocation] = useLocation()
+    const [open, setOpen] = useState(false)
+    const handleOpen = () => setOpen((cur) => !cur)
+
+    const loginMutation = useLogin()
     
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        try {
-            const res = await fetch("http://localhost:3000/api/login", {
-                method: "POST",
-                headers: {"Content-Type":"application/json"},
-                body: JSON.stringify({ nombre, password }),
-            })
-            const data = await res.json()
-            if (res.ok) {
-                setNombreRecibido(data.user.user_name)
-                console.log("Login Exitoso: ", data)
-            }else{
-                console.error("Error en el login: ", data.error)
+        loginMutation.mutate(
+            { nombre, password },
+            {
+                onSuccess: (data) => {
+                    console.log("Login exitoso: ", data)
+                    setNombreRecibido(data.user.user_name)
+                    setLocation("/home")
+                },
+                onError: (error) => {
+                    console.error("Error en login: ", error.message)
+                },
             }
-            
-        } catch (error) {
-            console.error("Error en el envío del nombre: ", error)
-        }
+        )
     }
-
-
-    const [open, setOpen] = useState(false)
-    const handleOpen = () => setOpen((cur) => !cur)
 
     return(
         <>
@@ -80,11 +79,11 @@ function ButtonLogin({setNombreRecibido }){
                           Contraseña
                         </Typography>
                         <Input 
-                        label="Contraseña"
-                        size="lg"
-                        type="password" 
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                            label="Contraseña"
+                            size="lg"
+                            type="password" 
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </CardBody>
                     <CardFooter className="pt-0">
