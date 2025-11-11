@@ -9,9 +9,9 @@ import {
   Input,
 } from "@material-tailwind/react"
 import { motion } from "framer-motion"
-import Carta from "./Carta"
+import Carta from "../loginComponents/Carta.jsx"
 import { useLocation } from "wouter"
-import useLogin from "./hook/useLogin.js"
+import useLogin from "../hook/useLogin.js"
 
 
 function ButtonLogin({setNombreRecibido }){

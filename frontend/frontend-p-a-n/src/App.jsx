@@ -1,5 +1,5 @@
-import HomeCheckOut from './Home'
-import Login from './Login'
+import HomeCheckOut from './views/Home'
+import Login from './views/Login'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Route, Switch} from 'wouter'
 import { Toaster } from 'sonner'

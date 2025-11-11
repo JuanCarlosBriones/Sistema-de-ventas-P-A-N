@@ -1,4 +1,4 @@
-import SideBar from "./homeComponents/SideBar"
+import SideBar from "../homeComponents/SideBar"
 function HomeCheckOut(){
     return(
         <>
