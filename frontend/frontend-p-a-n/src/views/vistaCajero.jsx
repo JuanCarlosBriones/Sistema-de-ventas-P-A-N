@@ -1,18 +1,28 @@
-import MenuInicio from "../homeComponents/menuInicio"
-import OpcionesInicio from "../homeComponents/opciones"
+import MenuInicio from "../homeComponents/vistaPrincipal/menuInicio"
+import OpcionesInicio from "../homeComponents/vistaPrincipal/opciones"
 
-import panelPrincipal from "../homeComponents/panelPrincipal"
+import PanelPrincipal from "../homeComponents/vistaPrincipal/PanelPrincipal"
+import DatosPan from "../homeComponents/vistaTicket/DatosPan"
+import DatosTicket from "../homeComponents/vistaTicket/DatosTicket"
+import TotalDatos from "../homeComponents/vistaTicket/TotalDatos"
+import PanInfo from "../homeComponents/vistaTicket/InfoPan/PanInfo"
+import ButtonAction from "../homeComponents/vistaTicket/ButtonsAction"
 
 
 function vistaCajero(){
     return(
         <>
-            <div className="flex  w-full h-full  flex-row justify-between">
-                <div className="flex flex-col basis-2/3 border-4 border-light-green-800 w-screen h-screen">
+            <div className="flex  w-full h-full  flex-row">
+                <div className="flex flex-col  border-4 border-light-green-800 w-screen h-screen">
                     <MenuInicio />
                     <OpcionesInicio />
+                    <PanelPrincipal />
                 </div>
-                <div className=" basis-[30vw] border-4  border-light-green-800 w-screen h-screen">
+                <div className="flex flex-col basis-[40vw] border-4  border-light-green-800 w-screen max-h-screen">
+                    <DatosTicket />
+                    <DatosPan />
+                    <TotalDatos />
+                    <ButtonAction />
                 </div>
             </div>
         </>

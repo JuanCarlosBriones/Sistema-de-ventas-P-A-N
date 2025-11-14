@@ -7,8 +7,9 @@ function MenuInicio(){
         <>
             <div className="flex justify-between flex-row   border-8 border-pink-600 w-auto" >
                 <Paths />
-                <div className="flex flex-row justify-center items-center  border-8 border-pink-600 w-auto">
+                <div className="flex flex-row justify-between items-center px-5  border-8 border-pink-600 w-auto">
                     <MostrarFecha />
+                    <span>|</span>
                     <MostrarHora />
                 </div>
                 <div className="flex justify-between">
