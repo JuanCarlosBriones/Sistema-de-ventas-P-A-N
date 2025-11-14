@@ -5,7 +5,7 @@ import Paths from "./MenuInicioComponents/Paths"
 function MenuInicio(){
     return(
         <>
-            <div className="flex flex-row justify-center items-center  border-8 border-pink-600 w-auto" >
+            <div className="flex justify-between flex-row   border-8 border-pink-600 w-auto" >
                 <Paths />
                 <div className="flex flex-row justify-center items-center  border-8 border-pink-600 w-auto">
                     <MostrarFecha />
