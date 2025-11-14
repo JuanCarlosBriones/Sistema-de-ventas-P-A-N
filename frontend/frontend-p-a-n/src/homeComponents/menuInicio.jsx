@@ -11,7 +11,7 @@ function MenuInicio(){
                     <MostrarFecha />
                     <MostrarHora />
                 </div>
-                <div>
+                <div className="flex justify-between">
                     <CerrarCaja />
                     <Cupones />
                 </div>

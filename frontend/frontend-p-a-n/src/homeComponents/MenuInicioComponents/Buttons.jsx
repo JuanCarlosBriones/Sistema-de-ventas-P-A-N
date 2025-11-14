@@ -1,8 +1,12 @@
+import { Button } from "@material-tailwind/react"
 
 function CerrarCaja(){
     return(
         <>
-            Cerrar caja
+            <div className="mr-3">
+                <Button size="md">Cerrar caja</Button>
+            </div>
+            
         </>
     )
 }
@@ -10,7 +14,10 @@ function CerrarCaja(){
 function Cupones(){
     return(
         <>
-            Cupones
+            <div className="mr-6">
+
+            </div>
+            <Button size="md">Cupones</Button>
         </>
     )
 }

@@ -13,7 +13,6 @@ function vistaCajero(){
                     <OpcionesInicio />
                 </div>
                 <div className=" basis-[30vw] border-4  border-light-green-800 w-screen h-screen">
-
                 </div>
             </div>
         </>
