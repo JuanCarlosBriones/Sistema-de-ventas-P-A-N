@@ -136,11 +136,10 @@ function SideBar(){
             <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
           </ListItemSuffix>
         </ListItem>
-        <ListItem>
+        <ListItem onClick={() => console.log("Hola cara de bola")}>
           <ListItemPrefix>
             <UserCircleIcon className="h-5 w-5" />
           </ListItemPrefix>
-          Profile
         </ListItem>
         <ListItem>
           <ListItemPrefix>

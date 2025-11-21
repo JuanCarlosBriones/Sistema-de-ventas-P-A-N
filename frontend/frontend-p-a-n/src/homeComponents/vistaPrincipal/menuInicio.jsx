@@ -2,7 +2,7 @@ import { CerrarCaja, Cupones } from "./MenuInicioComponents/Buttons"
 import { MostrarFecha, MostrarHora } from "./MenuInicioComponents/FechaHora"
 import Paths from "./MenuInicioComponents/Paths"
 
-function MenuInicio(){
+function MenuInicio({vistaPanel, isCupon, setDesabilitar, desabilitado}){
     return(
         <>
             <div className="flex justify-between flex-row   border-8 border-pink-600 w-auto" >
@@ -14,7 +14,7 @@ function MenuInicio(){
                 </div>
                 <div className="flex justify-between">
                     <CerrarCaja />
-                    <Cupones />
+                    <Cupones vistaPanel={vistaPanel} isCupon={isCupon} setDesabilitar={setDesabilitar} desabilitado={desabilitado} />
                 </div>
                 
             </div>

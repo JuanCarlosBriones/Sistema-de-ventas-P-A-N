@@ -25,16 +25,6 @@ function PanelPrincipal(){
                     select-none"
             >
                 <ItemPan />
-                <ItemPan />
-                <ItemPan />
-                <ItemPan />
-                <ItemPan />
-                <ItemPan />
-                <ItemPan />
-                <ItemPan />
-                <ItemPan />
-                <ItemPan />
-                <ItemPan />
 
 
                 

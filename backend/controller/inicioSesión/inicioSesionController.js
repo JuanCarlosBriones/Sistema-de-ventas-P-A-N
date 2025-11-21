@@ -27,6 +27,7 @@ const createUser = async (req, res) => {
             RolId: user.RolId,
         },
        })
+       
     } catch (error) {
         console.error('Error al crear usuario: ', error)
     }

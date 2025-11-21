@@ -1,4 +1,5 @@
 import { Button } from "@material-tailwind/react"
+import ButtonModal from "./vistaTicketComponents/ButtonModal"
 
 function ButtonAction(){
     return(
@@ -8,7 +9,7 @@ function ButtonAction(){
                     <Button>Cancelar</Button>
                 </div>
                 <div className="flex justify-center items-center mr-20 border-8 border-pink-600">
-                    <Button>Continuar</Button>
+                    <ButtonModal nombre={ 'Continuar' }  />
                 </div>
             </div>
         </>

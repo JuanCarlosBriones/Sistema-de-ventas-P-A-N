@@ -21,6 +21,7 @@ function ButtonLogin({setNombreRecibido }){
     const [, setLocation] = useLocation()
     const [open, setOpen] = useState(false)
     const handleOpen = () => setOpen((cur) => !cur)
+    const [rol, setRol] = useState("")
 
     const loginMutation = useLogin()
     
@@ -31,9 +32,17 @@ function ButtonLogin({setNombreRecibido }){
             { nombre, password },
             {
                 onSuccess: (data) => {
+                    
                     console.log("Login exitoso: ", data)
                     setNombreRecibido(data.user.user_name)
-                    setLocation("/home")
+                    setRol(data.user.RolId)
+                    const rolID = data.user.RolId
+                    console.log(rolID)
+                    if(rolID === 1){
+                        setLocation("/adminHome")
+                    }else if (rolID === 2) {
+                        setLocation("/home")
+                    }
                 },
                 onError: (error) => {
                     console.error("Error en login: ", error.message)
